@@ -1,7 +1,12 @@
 ---
-title: "Assignment #2"
+title: "Assignment_2"
 format: html
+execute:
+  knit:
+    root.dir: "../../" 
 ---
+
+
 
 You will need **PLINK2** installed and available in your PATH. Please follow the OS-specific setup guide in [`SETUP.md`](../../SETUP.md). The dataset for this assignment consists of the following binary PLINK files: `gwa.A2.bed`, `gwa.A2.bim`, `gwa.A2.fam` , available at the following Google Drive link: <https://drive.google.com/drive/folders/1rHoy3z52Yyj985ukjjtLhfIBxchpyYtZ?usp=drive_link>. Please download all three files and save them in `02_activities/data/`.
 
@@ -11,18 +16,24 @@ Before you run any models, first get familiar with the dataset. You may find `da
 
 (i) Read the `.fam` file. How many samples does the dataset contain?
 
-```{bash}
-head ./02_activities/data/gwa.A2.fam
+```{r}
+system("head ./02_activities/data/gwa.A2.fam")
 
-wc -l ./02_activities/data/gwa.A2.fam
+# To capture the output of wc -l specifically
+line_count <- system("wc -l ./02_activities/data/gwa.A2.fam", intern = TRUE)
+print(line_count)
 ```
+
+
 
 (ii) Read the `.bim` file. How many SNPs does the dataset contain?
 
-```{bash}
-head ./02_activities/data/gwa.A2.bim
+```{r}
+system("head ./02_activities/data/gwa.A2.bim")
 
-wc -l ./02_activities/data/gwa.A2.bim
+# To capture the output of wc -l specifically
+line_count <- system("wc -l ./02_activities/data/gwa.A2.bim", intern = TRUE)
+print(line_count)
 ```
 
 
